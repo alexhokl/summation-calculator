@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package summation;
+
+option go_package = "github.com/alexhokl/summation-calculator/proto";
+
+service SummationService {
+  rpc Sum (SummationRequest) returns (SummationResponse);
+}
+
+message SummationRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message SummationResponse {
+  int64 result = 1;
+}
